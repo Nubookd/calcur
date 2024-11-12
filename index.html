@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div id="calc">
+        <input type="text" id="num_1" placeholder="0"  />
+    </div>
+    <script>
+        var addOp = (op) => document.getElementById("num_1").value = (op == "=") ? eval (document.getElementById("num_1").value)
+    : (op == "c") ? "" : document.getElementById("num_1").value + op;
+        [1, 2, 3, 4, 5, 6, 7, 8, 9, "c", 0, "=", "x", "+", "-", "/", ].forEach ((b, i) => {
+            document.getElementById("calc").innerHTML += `<button onClick="addOp ('${b}')">${b}</button>`;
+        });
+    </script>
+</body>
+</html>
